@@ -363,6 +363,16 @@ h1,h2,h3 { font-family:var(--font-display); letter-spacing:-.02em; }
 .place span { font-size:.85rem; line-height:1.5; color:var(--on-surface-variant); }
 .leaflet-container { font-family:var(--font-body); }
 
+/* ---------------- Games ---------------- */
+.games-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr)); gap:22px; align-items:start; }
+.game-card { background:var(--surface-container); border:1px solid var(--hairline); border-radius:var(--radius-lg); padding:24px; box-shadow:var(--elev-1); display:flex; flex-direction:column; gap:18px; }
+.game-card__head { display:flex; align-items:flex-start; gap:14px; }
+.game-card__icon { width:48px; height:48px; flex:0 0 auto; display:inline-grid; place-items:center; border-radius:14px; background:var(--primary-container); color:var(--on-primary-container); font-size:25px; }
+.game-card__meta { min-width:0; }
+.game-card__title { margin:0; font-family:var(--font-display); font-size:1.22rem; font-weight:600; color:var(--on-surface); letter-spacing:-.01em; }
+.game-card__blurb { margin:3px 0 0; font-size:.9rem; line-height:1.5; color:var(--on-surface-variant); }
+.game-mount { min-width:0; }
+
 /* ---------------- Dialog ---------------- */
 .dialog { border:none; border-radius:var(--radius-lg); background:var(--surface-container-high); color:var(--on-surface); max-width:620px; width:calc(100% - 32px); padding:0; box-shadow:var(--elev-3); }
 .dialog::backdrop { background:rgba(8,18,14,.55); backdrop-filter:blur(4px); }

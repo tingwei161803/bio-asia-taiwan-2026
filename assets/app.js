@@ -308,6 +308,23 @@
             '<div class="map-box" id="map" role="application" aria-label="Map"></div>' +
             '<ul class="map-list" id="mapList"></ul>' +
           "</div>";
+      },
+
+      /* ---- games: one card per registered mini-game (window.LDW_GAMES) ---- */
+      games: function (p) {
+        var list = Array.isArray(window.LDW_GAMES) ? window.LDW_GAMES : [];
+        var cards = list.map(function (g, i) {
+          return '<section class="game-card" data-item>' +
+            '<header class="game-card__head">' +
+              (g.icon ? '<span class="material-symbols-rounded game-card__icon" aria-hidden="true">' + esc(g.icon) + "</span>" : "") +
+              '<div class="game-card__meta"><h2 class="game-card__title">' + esc(t(g.title)) + "</h2>" +
+              (t(g.blurb) ? '<p class="game-card__blurb">' + esc(t(g.blurb)) + "</p>" : "") + "</div>" +
+            "</header>" +
+            '<div class="game-mount" data-game="' + i + '"></div>' +
+          "</section>";
+        }).join("");
+        var emptyMsg = L.state.lang === "en" ? "No games loaded." : "尚未載入遊戲。";
+        return head(p) + (cards ? '<div class="games-grid">' + cards + "</div>" : '<p class="empty">' + esc(emptyMsg) + "</p>");
       }
     };
 
@@ -608,6 +625,19 @@
           li.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
         });
         teardowns.push(function () { try { map.remove(); } catch (e) {} });
+      },
+
+      games: function () {
+        var list = Array.isArray(window.LDW_GAMES) ? window.LDW_GAMES : [];
+        var ctx = { t: t, escapeHtml: esc, lang: L.state.lang };
+        [].forEach.call(pageEl.querySelectorAll(".game-mount"), function (mountEl) {
+          var g = list[parseInt(mountEl.dataset.game, 10)];
+          if (!g || typeof g.mount !== "function") return;
+          try {
+            var td = g.mount(mountEl, ctx);
+            if (typeof td === "function") teardowns.push(td);
+          } catch (e) { /* one broken game must not break the page */ }
+        });
       }
     };
 
