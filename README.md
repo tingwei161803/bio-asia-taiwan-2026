@@ -10,7 +10,7 @@
 
 | | |
 |---|---|
-| 🌐 網站 | <https://tingwei161803.github.io/bio-asia-taiwan-2026/> |
+| 🌐 網站 | <https://bio-asia-taiwan-2026.peteraim.com/> |
 
 > 直接點進去就能用,無需安裝。各頁皆有獨立網址(如 `.../forums.html`),論壇卡片亦可用 `.../forums.html#innovation-forum` 深連結分享。
 
