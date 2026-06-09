@@ -101,7 +101,8 @@ h1,h2,h3 { font-family:var(--font-display); letter-spacing:-.02em; }
 }
 .gh-star:hover { background:var(--surface-container-high); color:var(--on-surface); border-color:var(--primary-container); transform:translateY(-1px); }
 .gh-star:active { transform:scale(.97); }
-.gh-star__icon { font-size:18px; color:var(--tertiary); font-variation-settings:"FILL" 1,"wght" 400; }
+.gh-star__gh { color:inherit; flex:0 0 auto; display:block; }
+.gh-star__star { font-size:17px; color:var(--tertiary); font-variation-settings:"FILL" 1,"wght" 400; }
 .gh-star__count { font-variant-numeric:tabular-nums; padding-left:8px; border-left:1px solid var(--outline-variant); color:var(--on-surface); }
 
 /* ---------------- Cross-page nav (pills) ---------------- */
