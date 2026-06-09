@@ -22,6 +22,10 @@
   var META = window.SITE_META || { title: {}, subtitle: {}, footer: {} };
   var PAGES = Array.isArray(window.SITE_PAGES) ? window.SITE_PAGES : [];
 
+  /* ---------- GitHub repo for the star button (top-right) ---------- */
+  var GH_REPO = "tingwei161803/bio-asia-taiwan-2026";
+  var GH_REPO_URL = "https://github.com/" + GH_REPO;
+
   /* ---------- chrome i18n (page content strings live in the data) ---------- */
   var I18N = {
     en: { close: "Close", menu: "Pages", skip: "Skip to content" },
@@ -88,6 +92,12 @@
           '<span class="brand__name" id="brandName"></span>' +
         '</a>' +
         '<div class="appbar__actions">' +
+          '<a class="gh-star" id="ghStar" href="' + GH_REPO_URL + '" target="_blank" rel="noopener noreferrer" ' +
+            'title="Star on GitHub" aria-label="Star this project on GitHub / 在 GitHub 給星">' +
+            '<span class="material-symbols-rounded gh-star__icon" aria-hidden="true">star</span>' +
+            '<span class="gh-star__label" aria-hidden="true">Star</span>' +
+            '<span class="gh-star__count" id="ghStarCount">—</span>' +
+          '</a>' +
           '<button class="icon-btn" id="langToggle" type="button" title="Language" aria-label="Toggle language / 切換語言">' +
             '<span class="material-symbols-rounded">translate</span>' +
             '<span class="icon-btn__txt" id="langLabel">中</span>' +
@@ -207,6 +217,23 @@
   }
 
   /* =======================================================================
+     GITHUB STAR COUNT (no auth; degrades silently when offline/rate-limited)
+     ===================================================================== */
+  function formatCount(n) {
+    if (typeof n !== "number" || isNaN(n)) return "—";
+    if (n >= 1000) return (Math.round(n / 100) / 10) + "k";
+    return String(n);
+  }
+  function loadStars() {
+    var el = document.getElementById("ghStarCount");
+    if (!el || typeof fetch !== "function") return;
+    fetch("https://api.github.com/repos/" + GH_REPO, { headers: { Accept: "application/vnd.github+json" } })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { if (j && typeof j.stargazers_count === "number") el.textContent = formatCount(j.stargazers_count); })
+      .catch(function () { /* leave the placeholder on failure */ });
+  }
+
+  /* =======================================================================
      PUBLIC TOOLKIT (app.js uses this)
      ===================================================================== */
   window.LDW = {
@@ -230,6 +257,7 @@
     applyLangChrome();
     refreshChrome();
     wire();
+    loadStars();
     window.LDW.ready = true;
     document.dispatchEvent(new CustomEvent("ldw:shell-ready"));
   }

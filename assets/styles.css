@@ -92,6 +92,18 @@ h1,h2,h3 { font-family:var(--font-display); letter-spacing:-.02em; }
 .icon-btn:active { transform:scale(.96); }
 .icon-btn__txt { font-size:.82rem; font-weight:600; letter-spacing:.02em; }
 
+/* GitHub star button (top-right) */
+.gh-star {
+  display:inline-flex; align-items:center; gap:6px; padding:8px 13px; border-radius:999px;
+  border:1px solid var(--outline-variant); background:var(--surface-container); color:var(--on-surface-variant);
+  font-size:.82rem; font-weight:600; letter-spacing:.01em; box-shadow:var(--elev-1);
+  transition:background .18s, color .18s, border-color .18s, transform .18s;
+}
+.gh-star:hover { background:var(--surface-container-high); color:var(--on-surface); border-color:var(--primary-container); transform:translateY(-1px); }
+.gh-star:active { transform:scale(.97); }
+.gh-star__icon { font-size:18px; color:var(--tertiary); font-variation-settings:"FILL" 1,"wght" 400; }
+.gh-star__count { font-variant-numeric:tabular-nums; padding-left:8px; border-left:1px solid var(--outline-variant); color:var(--on-surface); }
+
 /* ---------------- Cross-page nav (pills) ---------------- */
 .pagenav {
   position:sticky; top:65px; z-index:25; border-bottom:1px solid var(--hairline);
@@ -392,7 +404,8 @@ h1,h2,h3 { font-family:var(--font-display); letter-spacing:-.02em; }
 }
 @media (max-width:380px) {
   .appbar__inner, .pagenav__inner, .page { padding-left:14px; padding-right:14px; }
-  .icon-btn__txt { display:none; }
+  .icon-btn__txt, .gh-star__label { display:none; }
+  .gh-star { padding:8px 11px; }
 }
 
 /* ---------------- Reduced motion ---------------- */
