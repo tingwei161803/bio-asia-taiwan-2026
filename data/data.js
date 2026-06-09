@@ -296,6 +296,96 @@ window.SITE_PAGES = [
     ]
   },
 
+  /* ============================ TIPS (kanban) ============================ */
+  {
+    slug: "tips",
+    layout: "kanban",
+    icon: "explore",
+    title:    { en: "Visit Tips by Role", zh: "逛展建議" },
+    subtitle: {
+      en: "How to make the most of the show — a tailored game plan for each kind of visitor.",
+      zh: "依你的角色,給一份最有效率的逛展攻略與重點提醒。"
+    },
+    columns: [
+      { key: "investor",   label: { en: "Investors / VC",     zh: "投資人 / VC" } },
+      { key: "bd",         label: { en: "Exhibitors / BD",    zh: "參展商 / 業務開發" } },
+      { key: "researcher", label: { en: "Researchers",        zh: "學研人員" } },
+      { key: "student",    label: { en: "Students",           zh: "學生 / 職涯" } },
+      { key: "general",    label: { en: "General Visitors",   zh: "一般觀眾" } }
+    ],
+    cards: [
+      /* ---- Investors / VC ---- */
+      { column: "investor",
+        title: { en: "Anchor on the Investment Summit & Demo Day", zh: "鎖定投資高峰會與 Demo Day" },
+        body:  { en: "Build your schedule around the Investment Summit and scout early-stage names at Demo Day — focus on cross-border investment, IPO and M&A sessions.", zh: "先把投資高峰會排進行程,並在 Demo Day 物色早期標的;聚焦跨境投資、IPO 與併購主題場次。" },
+        tags: ["Investment Summit", "Demo Day"] },
+      { column: "investor",
+        title: { en: "Pre-book one-on-one partnering", zh: "展前預約一對一媒合" },
+        body:  { en: "Use the online partnering system to lock meetings with the drug and platform companies you care about — 2026 expects 10,000+ matchmaking meetings.", zh: "透過線上媒合系統,鎖定有興趣的新藥/平台公司,展前就排定會議;2026 預期逾萬場媒合。" },
+        tags: ["Partnering"] },
+      { column: "investor",
+        title: { en: "Scan country pavilions for deal flow", zh: "巡國家主題館找 deal flow" },
+        body:  { en: "The 4F overseas pavilions and 20+ country pavilions are a fast way to compare cross-border pipelines and licensing opportunities.", zh: "4F 海外專館與 20+ 國家主題館,能快速比較跨國管線與授權機會。" },
+        tags: ["Pavilions"] },
+
+      /* ---- Exhibitors / BD ---- */
+      { column: "bd",
+        title: { en: "Sharpen a one-line pitch", zh: "備好一句話價值主張" },
+        body:  { en: "Foot traffic is heavy — prepare a bilingual one-line positioning and a QR business card to shorten every ice-breaker.", zh: "攤位人流大,先準備好中英雙語的一句話定位與 QR 名片,縮短每次破冰。" },
+        tags: ["Booth"] },
+      { column: "bd",
+        title: { en: "Target CDMO/CRO & supply partners", zh: "鎖定 CDMO/CRO 與供應鏈夥伴" },
+        body:  { en: "Use the Exhibitor Directory's category filter to draft a hit-list of the manufacturing and service partners you want to visit.", zh: "用參展單位頁的類別篩選,先列出要拜訪的製造與服務夥伴清單。" },
+        tags: ["CDMO", "Supply chain"] },
+      { column: "bd",
+        title: { en: "Make partnering your main floor", zh: "把媒合系統當主戰場" },
+        body:  { en: "Send invitations through the online system before the event, and keep your on-site time for the meetings you've already confirmed.", zh: "展前先用線上系統發出邀約,把現場時間留給已排定的會議。" },
+        tags: ["Partnering"] },
+
+      /* ---- Researchers ---- */
+      { column: "researcher",
+        title: { en: "Plan around the Innovation Forum", zh: "跟著創新論壇排場次" },
+        body:  { en: "The Innovation Forum spans drug design through clinical trials and manufacturing — pick the sessions closest to your field.", zh: "創新論壇涵蓋藥物設計到臨床試驗與製造,挑與你領域最相關的場次。" },
+        tags: ["Innovation Forum"] },
+      { column: "researcher",
+        title: { en: "Go deep at the symposia", zh: "外泌體與衛星研討會挖深" },
+        body:  { en: "The exosome symposium and satellite symposia are where you meet teams working on the same problems in depth.", zh: "外泌體研討會與衛星研討會,是與同領域團隊深入交流的好地方。" },
+        tags: ["Symposia"] },
+      { column: "researcher",
+        title: { en: "Visit academia & government pavilions", zh: "拜訪學研與政府專館" },
+        body:  { en: "Seek out collaboration, tech-transfer and joint-project opportunities at the academia, research and government booths.", zh: "在學研、研究機構與政府專館,尋找合作、技轉與計畫媒合機會。" },
+        tags: ["Tech transfer"] },
+
+      /* ---- Students ---- */
+      { column: "student",
+        title: { en: "Join the student programs", zh: "報名學生參與計劃" },
+        body:  { en: "The conference runs dedicated student participation programs — the easiest way in and a fast track to industry contacts.", zh: "大會設有學生參與計劃,是最方便的入場方式,也是快速累積產業人脈的捷徑。" },
+        tags: ["Student Program"] },
+      { column: "student",
+        title: { en: "Do homework with the exhibitor list", zh: "用參展單位頁做功課" },
+        body:  { en: "Research the companies and roles you're curious about beforehand, then ask informed questions at their booths.", zh: "事前研究有興趣的公司與職涯方向,現場再主動到攤位請教。" },
+        tags: ["Career"] },
+      { column: "student",
+        title: { en: "Plan a relaxed route", zh: "排一條輕鬆的路線" },
+        body:  { en: "Skim the Highlights and Programme first, pick 2–3 must-see themes, and avoid trying to see everything.", zh: "先看展覽亮點與議程,鎖定 2–3 個必看主題,別想著走馬看花全部逛完。" },
+        tags: ["Route"] },
+
+      /* ---- General Visitors ---- */
+      { column: "general",
+        title: { en: "Check hours & entry rules first", zh: "先確認時間與入場規定" },
+        body:  { en: "The exhibition runs Jul 16–19, 10:00–18:00 (final day 17:00); children under 12 are not admitted — register online ahead of time.", zh: "展覽 7/16–19,10:00–18:00(末日 17:00);12 歲以下不開放入場,建議先線上登記。" },
+        tags: ["Hours", "Entry"] },
+      { column: "general",
+        title: { en: "Take the metro", zh: "搭捷運最省事" },
+        body:  { en: "Taipei Nangang Exhibition Center station connects directly to the venue; public transit is recommended during the event.", zh: "捷運南港展覽館站直達展館;展期期間建議搭乘大眾運輸。" },
+        tags: ["Transit"] },
+      { column: "general",
+        title: { en: "Start from the Highlights page", zh: "從亮點頁挑必看" },
+        body:  { en: "Use the Exhibition Highlights to pick the themed pavilions you care about and plan a comfortable half-day.", zh: "用展覽亮點頁挑感興趣的主題館,規劃一個輕鬆的半天行程。" },
+        tags: ["Highlights"] }
+    ]
+  },
+
   /* ============================ EXHIBITORS (table) ============================ */
   {
     slug: "exhibitors",
