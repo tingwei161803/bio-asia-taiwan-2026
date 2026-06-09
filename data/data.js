@@ -147,6 +147,71 @@ window.SITE_PAGES = [
     ]
   },
 
+  /* ============================ WHY TAIWAN (scrolly) ============================ */
+  {
+    slug: "why-taiwan",
+    layout: "scrolly",
+    icon: "trending_up",
+    title:    { en: "Why Taiwan", zh: "為什麼是台灣" },
+    subtitle: {
+      en: "Scroll to see how BIO Asia–Taiwan grew into a top-three biotech convention. Figures from public post-event reports.",
+      zh: "向下捲動,看亞洲生技大會如何成長為全球三大生技盛會之一。數據整理自公開賽後報導。"
+    },
+    steps: [
+      { text: { en: "BIO Asia–Taiwan is now counted among the world’s top three biotech conventions.", zh: "亞洲生技大會,已是全球公認的三大生技盛會之一。" },
+        visual: { type: "stat", value: { en: "TOP 3", zh: "全球前三" }, color: "var(--primary)" } },
+      { text: { en: "One exhibition gathers 850+ companies across more than 2,200 booths.", zh: "一場展覽,匯聚 850+ 家企業、逾 2,200 個攤位。" },
+        visual: { type: "stat", value: "2,200+", color: "var(--primary)" } },
+      { text: { en: "In five days it draws roughly 140,000 visits from 50 countries.", zh: "五天之內,迎來來自 50 國、近 14 萬人次。" },
+        visual: { type: "stat", value: { en: "140K", zh: "14 萬" }, color: "var(--tertiary)" } },
+      { text: { en: "Partnering momentum keeps climbing — from 5,500 meetings in 2023 to 8,800 in 2025.", zh: "媒合動能持續攀升 — 從 2023 年的 5,500 場,成長到 2025 年的 8,800 場。" },
+        visual: { type: "bars", color: "var(--primary)", bars: [ { label: "2023", value: 5500 }, { label: "2024", value: 8000 }, { label: "2025", value: 8800 } ] } },
+      { text: { en: "In 2026, “Asian Inspiration, Global Impact” connects Asia to the world.", zh: "2026,以「亞洲創新・全球影響」串接亞洲與世界。" },
+        visual: { type: "stat", value: "2026", color: "var(--primary)" } }
+    ]
+  },
+
+  /* ============================ STATS (dashboard) ============================ */
+  {
+    slug: "stats",
+    layout: "dashboard",
+    icon: "monitoring",
+    title:    { en: "By the Numbers", zh: "數據看板" },
+    subtitle: {
+      en: "Year-on-year growth of the exhibition. Figures from public post-event reports; some are approximate.",
+      zh: "展會歷年成長一覽。數據整理自公開賽後報導,部分為約略值。"
+    },
+    stats: [
+      { label: { en: "Exhibition Booths", zh: "展覽攤位" }, value: "2,200+" },
+      { label: { en: "Visits (2025)", zh: "參觀人次 (2025)" }, value: "140K", delta: 17 },
+      { label: { en: "Partnering Meetings", zh: "商機媒合" }, value: "8,800", delta: 10 },
+      { label: { en: "Countries / Regions", zh: "國家 / 地區" }, value: "50" },
+      { label: { en: "Conference Registrants", zh: "大會註冊" }, value: "3,000+" }
+    ],
+    bars: {
+      title: { en: "One-on-one partnering meetings by year", zh: "歷年一對一商機媒合(場)" },
+      series: [ { label: "2023", value: 5500 }, { label: "2024", value: 8000 }, { label: "2025", value: 8800 }, { label: "2026*", value: 10000 } ]
+    },
+    line: {
+      title: { en: "Exhibition visits by year (thousands)", zh: "歷年參觀人次(千)" },
+      points: [ { x: "2023", y: 118 }, { x: "2024", y: 122 }, { x: "2025", y: 140 } ]
+    },
+    table: {
+      columns: [
+        { key: "year",     label: { en: "Year",       zh: "年份" } },
+        { key: "booths",   label: { en: "Booths",     zh: "攤位" } },
+        { key: "visits",   label: { en: "Visits",     zh: "參觀人次" } },
+        { key: "meetings", label: { en: "Partnering", zh: "商機媒合" } }
+      ],
+      rows: [
+        { year: "2023", booths: "2,000",  visits: "~120,000", meetings: "5,500+" },
+        { year: "2024", booths: "2,200+", visits: "120,000+", meetings: "8,000+" },
+        { year: "2025", booths: "2,200+", visits: "~140,000", meetings: "8,800" },
+        { year: { en: "2026 (proj.)", zh: "2026(預估)" }, booths: "2,200+", visits: "—", meetings: "10,000+" }
+      ]
+    }
+  },
+
   /* ============================ HIGHLIGHTS (bento) ============================ */
   {
     slug: "highlights",
@@ -182,6 +247,49 @@ window.SITE_PAGES = [
       { size: "sm", icon: "science",
         title: { en: "Biotech Services", zh: "生技服務" },
         body:  { en: "Instruments, reagents and lab services.", zh: "儀器、試劑與實驗室服務。" } }
+    ]
+  },
+
+  /* ============================ SPEAKERS (gallery) ============================ */
+  {
+    slug: "speakers",
+    layout: "gallery",
+    icon: "mic",
+    title:    { en: "Featured Speakers", zh: "講者陣容" },
+    subtitle: {
+      en: "A glimpse of the headline speakers and leadership. Indicative and partial — see the official programme for the full lineup.",
+      zh: "重量級講者與大會領導一瞥。為部分名單,完整陣容請見官方議程。"
+    },
+    categories: [
+      { key: "keynote",    en: "Keynotes",   zh: "主題演講" },
+      { key: "leadership", en: "Leadership", zh: "大會領導" }
+    ],
+    items: [
+      { slug: "chi-huey-wong", category: "keynote",
+        title:   { en: "Chi-Huey Wong", zh: "翁啟惠 Chi-Huey Wong" },
+        summary: { en: "Glycoscience pioneer; former President of Academia Sinica.", zh: "醣分子科學先驅,中央研究院前院長。" },
+        tags: ["Glycoscience", "Chemistry"],
+        overview: { en: "A world-renowned chemist and pioneer of glycoscience; former President of Academia Sinica, known for programmable one-pot oligosaccharide synthesis and carbohydrate-based vaccines.", zh: "享譽國際的化學家、醣分子科學先驅,曾任中央研究院院長,以可程式化一鍋法寡醣合成與醣分子疫苗聞名。" } },
+      { slug: "randy-schekman", category: "keynote",
+        title:   { en: "Randy Schekman", zh: "Randy Schekman" },
+        summary: { en: "2013 Nobel Laureate in Physiology or Medicine.", zh: "2013 年諾貝爾生理醫學獎得主。" },
+        tags: ["Nobel 2013", "Cell Biology"],
+        overview: { en: "Cell biologist at UC Berkeley, awarded the 2013 Nobel Prize in Physiology or Medicine for discoveries of the machinery regulating vesicle traffic in cells.", zh: "加州大學柏克萊分校細胞生物學家,因發現細胞內囊泡運輸的調控機制,獲 2013 年諾貝爾生理醫學獎。" } },
+      { slug: "rudi-pauwels", category: "keynote",
+        title:   { en: "Rudi Pauwels", zh: "Rudi Pauwels" },
+        summary: { en: "Serial biotech entrepreneur and investor.", zh: "連續創業的生技創業家與投資人。" },
+        tags: ["Entrepreneur", "Diagnostics"],
+        overview: { en: "A biotech entrepreneur and investor known for founding companies across antiviral drug discovery and molecular diagnostics.", zh: "生技創業家與投資人,以創立抗病毒新藥與分子診斷領域的公司聞名。" } },
+      { slug: "johnsee-lee", category: "leadership",
+        title:   { en: "Johnsee Lee", zh: "李鍾熙 Johnsee Lee" },
+        summary: { en: "Conference Chairman, BIO Asia–Taiwan.", zh: "亞洲生技大會主席。" },
+        tags: ["Conference Chair"],
+        overview: { en: "Conference Chairman of BIO Asia–Taiwan and a long-time leader of Taiwan’s biotech ecosystem; former president of ITRI.", zh: "亞洲生技大會主席,長期推動台灣生技產業發展,曾任工業技術研究院院長。" } },
+      { slug: "lc-liu", category: "leadership",
+        title:   { en: "LC Liu", zh: "LC Liu" },
+        summary: { en: "Chairman, Taiwan Bio Industry Organization.", zh: "台灣生技產業協會理事長。" },
+        tags: ["Taiwan BIO"],
+        overview: { en: "Chairman of the Taiwan Bio Industry Organization (Taiwan BIO), co-organiser of BIO Asia–Taiwan.", zh: "台灣生技產業協會(Taiwan BIO)理事長,亞洲生技大會共同主辦方。" } }
     ]
   },
 
@@ -386,6 +494,32 @@ window.SITE_PAGES = [
     ]
   },
 
+  /* ============================ ACCESS (comparison) ============================ */
+  {
+    slug: "access",
+    layout: "comparison",
+    icon: "badge",
+    title:    { en: "What Each Pass Gets You", zh: "參觀身分對照" },
+    subtitle: {
+      en: "Indicative access by visitor type. Confirm details and pricing on the official registration page.",
+      zh: "依參觀身分的權益對照(示意)。實際權益與費用請以官方報名頁為準。"
+    },
+    plans: [
+      { key: "visitor",   name: { en: "General Visitor",     zh: "一般觀眾" },   price: { en: "Free reg.",  zh: "免費登記" }, note: { en: "Exhibition", zh: "僅展覽" } },
+      { key: "delegate",  name: { en: "Conference Delegate", zh: "大會註冊者" }, price: { en: "Paid",       zh: "付費" }, highlight: true, note: { en: "Full conference", zh: "完整大會" } },
+      { key: "exhibitor", name: { en: "Exhibitor",          zh: "參展商" },     price: { en: "Booth pkg.", zh: "攤位方案" }, note: { en: "Exhibit + BD", zh: "參展 + 商務" } }
+    ],
+    features: [
+      { label: { en: "Enter the exhibition",      zh: "進入展覽會場" },   values: { visitor: true,  delegate: true, exhibitor: true } },
+      { label: { en: "Attend conference forums",  zh: "聽主題論壇" },     values: { visitor: false, delegate: true, exhibitor: { en: "Partial", zh: "部分" } } },
+      { label: { en: "Investment Summit",         zh: "投資高峰會" },     values: { visitor: false, delegate: true, exhibitor: { en: "Partial", zh: "部分" } } },
+      { label: { en: "Demo Day",                  zh: "Demo Day" },       values: { visitor: { en: "Open sessions", zh: "開放場次" }, delegate: true, exhibitor: true } },
+      { label: { en: "One-on-one partnering",     zh: "一對一商機媒合" }, values: { visitor: false, delegate: true, exhibitor: true } },
+      { label: { en: "Satellite symposia",        zh: "衛星研討會" },     values: { visitor: { en: "Some open", zh: "部分開放" }, delegate: true, exhibitor: true } },
+      { label: { en: "Set up a booth",            zh: "設置攤位" },       values: { visitor: false, delegate: false, exhibitor: true } }
+    ]
+  },
+
   /* ============================ EXHIBITORS (table) ============================ */
   {
     slug: "exhibitors",
@@ -482,5 +616,17 @@ window.SITE_PAGES = [
       { q: { en: "Do forums require separate registration?", zh: "論壇需要另外報名嗎？" },
         a: { en: "Conference forums and symposia generally require registration, and some are paid. See the official programme for details.", zh: "大會論壇與研討會多需註冊，部分需付費，請依官方議程公告。" } }
     ]
+  },
+
+  /* ============================ GAMES (mini-games) ============================ */
+  {
+    slug: "games",
+    layout: "games",
+    icon: "sports_esports",
+    title:    { en: "Mini Games", zh: "小遊戲" },
+    subtitle: {
+      en: "Take a break and learn some biotech the fun way — quiz, memory match, reaction and term match.",
+      zh: "休息一下，用玩的學生技 — 快問快答、記憶配對、反應遊戲與術語配對。"
+    }
   }
 ];
